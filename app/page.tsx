@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Cloud, Code, Shield, Cpu, Gauge, Server, ArrowRight, ExternalLink } from 'lucide-react';
 
 export default function JHC2CLanding() {
@@ -36,7 +37,7 @@ export default function JHC2CLanding() {
           <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
             Expertkonsultation inom <span className="text-white font-medium text-nowrap tracking-tight">AWS Architecture</span>,
             <span className="text-white font-medium text-nowrap tracking-tight"> IaC (Terraform)</span> och
-            <span className="text-white font-medium text-nowrap tracking-tight"> Hybrid Cloud</span> med fokus på HPE ekosystem.
+            <span className="text-white font-medium text-nowrap tracking-tight"> Hybrid Cloud</span> med fokus på VMware vSphere.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@jhc2c.tech" className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-xl shadow-blue-900/20 flex items-center justify-center gap-2">
@@ -57,16 +58,21 @@ export default function JHC2CLanding() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <ServiceCard
-            icon={<Gauge className="w-10 h-10 text-green-400" />}
-            title="FinOps & Cost Optimization"
-            desc="Sänk din AWS-faktura genom avancerad analys och optimering av resursutnyttjande. Vi gör molnet lönsamt."
-          />
+          {/* FinOps kortet med länk till undersidan */}
+          <Link href="/finops" className="block group">
+            <ServiceCard
+              icon={<Gauge className="w-10 h-10 text-green-400" />}
+              title="FinOps & Kostnadskontroll"
+              desc="Sänk din AWS-faktura genom avancerad analys och optimering av resursutnyttjande. Klicka för att läsa mer."
+            />
+          </Link>
+
           <ServiceCard
             icon={<Code className="w-10 h-10 text-blue-400" />}
             title="Infrastructure as Code"
             desc="Robust och versionshanterad automation med Terraform. CI/CD-pipelines som bygger din infrastruktur felfritt."
           />
+
           <ServiceCard
             icon={<Shield className="w-10 h-10 text-purple-400" />}
             title="Cloud Security"
@@ -80,15 +86,15 @@ export default function JHC2CLanding() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 space-y-8">
-              <h2 className="text-4xl font-bold text-white leading-tight">Hybrid Cloud & <br /><span className="text-blue-500 tracking-tighter uppercase italic">HPE Hardware Expertise</span></h2>
+              <h2 className="text-4xl font-bold text-white leading-tight">Hybrid Cloud & <br /><span className="text-blue-500 tracking-tighter uppercase italic">VMware vSphere Expertise</span></h2>
               <p className="text-lg text-slate-400 leading-relaxed">
-                Vi bryggar gapet mellan on-premise och cloud. Med djup expertis inom <span className="text-white underline decoration-blue-500">HPE</span>,
+                Vi bryggar gapet mellan on-premise och cloud. Med djup expertis inom <span className="text-white underline decoration-blue-500">HPE Synergy</span>,
                 servertjänster och FC-storage, optimerar vi din hybridmiljö för maximal prestanda.
               </p>
               <div className="grid grid-cols-2 gap-6 pt-4 text-sm font-mono text-slate-300">
                 <div className="flex items-center gap-2"><Server className="text-blue-500" size={16} /> HPE Synergy / Blades</div>
                 <div className="flex items-center gap-2"><Cpu className="text-blue-500" size={16} /> Fiber Channel Storage</div>
-                <div className="flex items-center gap-2"><Shield className="text-blue-500" size={16} /> VMware on HPE</div>
+                <div className="flex items-center gap-2"><Shield className="text-blue-500" size={16} /> VMware vSphere</div>
                 <div className="flex items-center gap-2"><ExternalLink className="text-blue-500" size={16} /> Cloud Migration</div>
               </div>
             </div>
@@ -115,7 +121,7 @@ export default function JHC2CLanding() {
 
 function ServiceCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
-    <div className="p-10 rounded-2xl bg-[#0a1122] border border-slate-800 hover:border-blue-500/50 transition-all group relative overflow-hidden">
+    <div className="p-10 rounded-2xl bg-[#0a1122] border border-slate-800 hover:border-blue-500/50 transition-all group relative overflow-hidden h-full">
       <div className="absolute top-0 right-0 w-24 h-24 bg-blue-600/5 blur-3xl group-hover:bg-blue-600/10 transition-colors" />
       <div className="mb-6">{icon}</div>
       <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
