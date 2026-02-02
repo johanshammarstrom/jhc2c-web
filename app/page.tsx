@@ -36,7 +36,7 @@ export default function JHC2CLanding() {
           <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
             Expertkonsultation inom <span className="text-white font-medium text-nowrap tracking-tight">AWS Architecture</span>,
             <span className="text-white font-medium text-nowrap tracking-tight"> IaC (Terraform)</span> och
-            <span className="text-white font-medium text-nowrap tracking-tight"> Hybrid Cloud</span> med fokus på HPE Synergy-ekosystem.
+            <span className="text-white font-medium text-nowrap tracking-tight"> Hybrid Cloud</span> med fokus på HPE ekosystem.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@jhc2c.tech" className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-xl shadow-blue-900/20 flex items-center justify-center gap-2">
@@ -82,7 +82,7 @@ export default function JHC2CLanding() {
             <div className="flex-1 space-y-8">
               <h2 className="text-4xl font-bold text-white leading-tight">Hybrid Cloud & <br /><span className="text-blue-500 tracking-tighter uppercase italic">HPE Hardware Expertise</span></h2>
               <p className="text-lg text-slate-400 leading-relaxed">
-                Vi bryggar gapet mellan on-premise och cloud. Med djup expertis inom <span className="text-white underline decoration-blue-500">HPE Synergy</span>,
+                Vi bryggar gapet mellan on-premise och cloud. Med djup expertis inom <span className="text-white underline decoration-blue-500">HPE</span>,
                 servertjänster och FC-storage, optimerar vi din hybridmiljö för maximal prestanda.
               </p>
               <div className="grid grid-cols-2 gap-6 pt-4 text-sm font-mono text-slate-300">
