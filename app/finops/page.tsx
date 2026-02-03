@@ -5,12 +5,17 @@ import { motion } from 'framer-motion';
 import { Gauge, TrendingDown, Target, BarChart3, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
+// Uppdaterad med Cubic Bezier för att fixa TypeScript-felet i Amplify
 const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: (delay: number) => ({
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, delay: delay, ease: "easeOut" }
+        transition: {
+            duration: 0.6,
+            delay: delay,
+            ease: [0.33, 1, 0.68, 1]
+        }
     })
 };
 

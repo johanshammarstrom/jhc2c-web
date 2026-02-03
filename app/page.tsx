@@ -14,12 +14,17 @@ import {
   ExternalLink
 } from 'lucide-react';
 
+// Samma fix här: exakta koordinater för att tillfredsställa TypeScript i Amplify
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: delay, ease: "easeOut" }
+    transition: {
+      duration: 0.6,
+      delay: delay,
+      ease: [0.33, 1, 0.68, 1]
+    }
   })
 };
 
