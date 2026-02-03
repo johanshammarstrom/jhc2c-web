@@ -51,9 +51,9 @@ export default function JHC2CLanding() {
       <header className="relative py-20 md:py-32 px-6 overflow-hidden border-b border-slate-800/50">
         {/* NY BAKGRUNDSBILD HÄR! */}
         <div
-          className="absolute inset-0 z-0 opacity-20"
+          className="absolute inset-0 z-0 opacity-50"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1627947118836-9a2c2c01d4a0?q=80&w=2600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
