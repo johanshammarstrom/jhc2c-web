@@ -1,49 +1,49 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Cloud, Code, Shield, Cpu, Gauge, Server, ArrowRight, ExternalLink } from 'lucide-react';
 
 export default function JHC2CLanding() {
   return (
-    <div className="min-h-screen bg-[#020617] text-slate-200 selection:bg-blue-500/30 font-sans">
+    <div className="min-h-screen bg-[#020617] text-slate-200 selection:bg-blue-500/30 font-sans overflow-x-hidden">
 
       {/* HEADER / NAV */}
       <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto border-b border-slate-800/50">
         <div className="flex items-center gap-2">
           <div className="bg-blue-600 p-1.5 rounded-lg">
-            <Cloud className="text-white w-6 h-6" />
+            <Cloud className="text-white w-5 h-5 md:w-6 md:h-6" />
           </div>
-          <span className="text-2xl font-black tracking-tighter text-white uppercase">
+          <span className="text-xl md:text-2xl font-black tracking-tighter text-white uppercase">
             JH<span className="text-blue-500">C2C</span>
           </span>
         </div>
-        <div className="hidden md:flex gap-8 text-sm font-semibold tracking-wide uppercase text-slate-400">
-          <a href="#solutions" className="hover:text-blue-400 transition-colors">Solutions</a>
-          <a href="#hybrid" className="hover:text-blue-400 transition-colors">Hybrid Cloud</a>
+        <div className="flex gap-4 md:gap-8 text-[10px] md:text-sm font-semibold tracking-wide uppercase text-slate-400">
+          <a href="#solutions" className="hover:text-blue-400 transition-colors hidden sm:block">Solutions</a>
           <a href="mailto:info@jhc2c.tech" className="text-blue-500 hover:text-blue-400">Contact</a>
         </div>
       </nav>
 
       {/* HERO SECTION */}
-      <header className="relative py-24 px-6 overflow-hidden border-b border-slate-800/50">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full z-0" />
+      <header className="relative py-16 md:py-24 px-6 overflow-hidden border-b border-slate-800/50">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] md:w-[800px] h-[300px] bg-blue-600/10 blur-[80px] md:blur-[120px] rounded-full z-0" />
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
             <Shield size={14} /> AWS Certified Solutions Architect
           </div>
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tight leading-[0.9]">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white mb-6 md:mb-8 tracking-tight leading-[1.1] md:leading-[0.9]">
             CODE <span className="text-blue-500">TO</span> CLOUD
           </h1>
-          <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Expertkonsultation inom <span className="text-white font-medium text-nowrap tracking-tight">AWS Architecture</span>,
-            <span className="text-white font-medium text-nowrap tracking-tight"> IaC (Terraform)</span> och
-            <span className="text-white font-medium text-nowrap tracking-tight"> Hybrid Cloud</span> med fokus på VMware vSphere.
+          <p className="text-lg md:text-2xl text-slate-400 mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+            Expertkonsultation inom <span className="text-white font-medium">AWS Architecture</span>,
+            <span className="text-white font-medium"> IaC (Terraform)</span> och
+            <span className="text-white font-medium"> Hybrid Cloud</span>.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@jhc2c.tech" className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-xl shadow-blue-900/20 flex items-center justify-center gap-2">
+            <a href="mailto:info@jhc2c.tech" className="bg-blue-600 hover:bg-blue-500 text-white px-8 md:px-10 py-4 rounded-xl font-bold transition-all shadow-xl shadow-blue-900/20 flex items-center justify-center gap-2 text-sm md:text-base">
               Start Project <ArrowRight size={18} />
             </a>
-            <div className="px-10 py-4 rounded-xl font-bold border border-slate-700 text-slate-300">
+            <div className="px-8 md:px-10 py-4 rounded-xl font-bold border border-slate-700 text-slate-300 text-sm md:text-base cursor-default">
               jhc2c.tech
             </div>
           </div>
@@ -51,68 +51,78 @@ export default function JHC2CLanding() {
       </header>
 
       {/* CORE SERVICES */}
-      <section id="solutions" className="py-24 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4 uppercase tracking-tighter">Core Competencies</h2>
+      <section id="solutions" className="py-16 md:py-24 max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase tracking-tighter">Core Competencies</h2>
           <div className="h-1 w-12 bg-blue-600 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* FinOps kortet med länk till undersidan */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <Link href="/finops" className="block group">
             <ServiceCard
-              icon={<Gauge className="w-10 h-10 text-green-400" />}
+              icon={<Gauge className="w-8 h-8 md:w-10 md:h-10 text-green-400" />}
               title="FinOps & Kostnadskontroll"
-              desc="Sänk din AWS-faktura genom avancerad analys och optimering av resursutnyttjande. Klicka för att läsa mer."
+              desc="Sänk din AWS-faktura genom avancerad analys och optimering. Klicka för att läsa mer."
             />
           </Link>
-
           <ServiceCard
-            icon={<Code className="w-10 h-10 text-blue-400" />}
+            icon={<Code className="w-8 h-8 md:w-10 md:h-10 text-blue-400" />}
             title="Infrastructure as Code"
-            desc="Robust och versionshanterad automation med Terraform. CI/CD-pipelines som bygger din infrastruktur felfritt."
+            desc="Robust automation med Terraform. CI/CD-pipelines som bygger din infrastruktur felfritt."
           />
-
           <ServiceCard
-            icon={<Shield className="w-10 h-10 text-purple-400" />}
+            icon={<Shield className="w-8 h-8 md:w-10 md:h-10 text-purple-400" />}
             title="Cloud Security"
-            desc="Implementering av Cloud Governance och säkerhetsarkitektur enligt AWS Well-Architected Framework."
+            desc="Säkerhetsarkitektur enligt AWS Well-Architected Framework och Cloud Governance."
           />
         </div>
       </section>
 
       {/* HYBRID SECTION */}
-      <section id="hybrid" className="py-24 bg-slate-900/40 border-y border-slate-800/50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="flex-1 space-y-8">
-              <h2 className="text-4xl font-bold text-white leading-tight">Hybrid Cloud & <br /><span className="text-blue-500 tracking-tighter uppercase italic">VMware vSphere Expertise</span></h2>
-              <p className="text-lg text-slate-400 leading-relaxed">
-                Vi bryggar gapet mellan on-premise och cloud. Med djup expertis inom <span className="text-white underline decoration-blue-500">HPE Synergy</span>,
-                servertjänster och FC-storage, optimerar vi din hybridmiljö för maximal prestanda.
+      <section id="hybrid" className="relative py-16 md:py-24 overflow-hidden border-y border-slate-800/50">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hpe-rack.jpg"
+            alt="HPE Synergy Rack"
+            fill
+            className="object-cover opacity-10 md:opacity-20"
+          />
+          <div className="absolute inset-0 bg-[#020617]/90 md:bg-gradient-to-r md:from-[#020617] md:via-[#020617]/80 md:to-transparent" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
+            <div className="flex-1 space-y-6 md:space-y-8 text-center lg:text-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                Hybrid Cloud & <br />
+                <span className="text-blue-500 tracking-tighter uppercase italic">VMware vSphere</span>
+              </h2>
+              <p className="text-base md:text-lg text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Vi bryggar gapet mellan on-premise och cloud. Expertis inom <span className="text-white underline decoration-blue-500">HPE Synergy</span> och storage.
               </p>
-              <div className="grid grid-cols-2 gap-6 pt-4 text-sm font-mono text-slate-300">
-                <div className="flex items-center gap-2"><Server className="text-blue-500" size={16} /> HPE Synergy / Blades</div>
-                <div className="flex items-center gap-2"><Cpu className="text-blue-500" size={16} /> Fiber Channel Storage</div>
-                <div className="flex items-center gap-2"><Shield className="text-blue-500" size={16} /> VMware vSphere</div>
-                <div className="flex items-center gap-2"><ExternalLink className="text-blue-500" size={16} /> Cloud Migration</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs md:text-sm font-mono text-slate-300">
+                <div className="flex items-center justify-center lg:justify-start gap-2 bg-slate-900/50 p-3 rounded-lg border border-slate-800"><Server className="text-blue-500" size={16} /> HPE Synergy / Blades</div>
+                <div className="flex items-center justify-center lg:justify-start gap-2 bg-slate-900/50 p-3 rounded-lg border border-slate-800"><Cpu className="text-blue-500" size={16} /> Fiber Channel Storage</div>
+                <div className="flex items-center justify-center lg:justify-start gap-2 bg-slate-900/50 p-3 rounded-lg border border-slate-800"><Shield className="text-blue-500" size={16} /> VMware vSphere</div>
+                <div className="flex items-center justify-center lg:justify-start gap-2 bg-slate-900/50 p-3 rounded-lg border border-slate-800"><ExternalLink className="text-blue-500" size={16} /> Cloud Migration</div>
               </div>
             </div>
-            <div className="flex-1 w-full bg-gradient-to-br from-blue-600/10 to-transparent p-12 rounded-3xl border border-blue-500/20 text-center">
-              <div className="text-7xl font-black text-white mb-2">Architected</div>
-              <div className="text-blue-500 font-bold text-xl uppercase tracking-[0.4em] mb-6">to scale</div>
-              <p className="text-slate-500 text-sm italic">"Levererar Enterprise-lösningar som kombinerar hårdvarans råkraft med molnets flexibilitet."</p>
+
+            <div className="flex-1 w-full bg-blue-600/5 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-blue-500/20 text-center shadow-2xl">
+              <div className="text-5xl md:text-7xl font-black text-white mb-2">Architected</div>
+              <div className="text-blue-500 font-bold text-lg md:text-xl uppercase tracking-[0.2em] md:tracking-[0.4em] mb-4 md:mb-6">to scale</div>
+              <p className="text-slate-400 text-xs md:text-sm italic italic leading-relaxed">"Enterprise-lösningar som kombinerar hårdvarans råkraft med molnets flexibilitet."</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="py-20 px-6 text-center border-t border-slate-800/50">
-        <div className="text-white font-black text-xl mb-4 tracking-tighter">JH<span className="text-blue-500 uppercase">c2c</span> AB</div>
-        <p className="text-slate-500 text-sm tracking-widest uppercase mb-8">Stockholm · Sweden · Worldwide</p>
-        <div className="text-xs text-slate-600">
-          © {new Date().getFullYear()} JHC2C AB | Org nr: 55xx-xxxx | jhc2c.tech
+      <footer className="py-12 md:py-20 px-6 text-center border-t border-slate-800/50">
+        <div className="text-white font-black text-lg md:text-xl mb-4 tracking-tighter uppercase">JH<span className="text-blue-500">c2c</span> AB</div>
+        <p className="text-slate-500 text-[10px] md:text-xs tracking-[0.2em] uppercase mb-8">Stockholm · Sweden · Worldwide</p>
+        <div className="text-[10px] text-slate-600">
+          © {new Date().getFullYear()} JHC2C AB | jhc2c.tech
         </div>
       </footer>
     </div>
@@ -121,11 +131,11 @@ export default function JHC2CLanding() {
 
 function ServiceCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
-    <div className="p-10 rounded-2xl bg-[#0a1122] border border-slate-800 hover:border-blue-500/50 transition-all group relative overflow-hidden h-full">
+    <div className="p-8 md:p-10 rounded-2xl bg-[#0a1122] border border-slate-800 hover:border-blue-500/50 transition-all group relative overflow-hidden h-full">
       <div className="absolute top-0 right-0 w-24 h-24 bg-blue-600/5 blur-3xl group-hover:bg-blue-600/10 transition-colors" />
       <div className="mb-6">{icon}</div>
-      <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
-      <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
+      <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">{title}</h3>
+      <p className="text-slate-400 text-xs md:text-sm leading-relaxed">{desc}</p>
     </div>
   );
 }
