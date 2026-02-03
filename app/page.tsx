@@ -49,7 +49,18 @@ export default function JHC2CLanding() {
 
       {/* HERO SECTION */}
       <header className="relative py-20 md:py-32 px-6 overflow-hidden border-b border-slate-800/50">
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }} className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] md:w-[800px] h-[300px] bg-blue-600/10 blur-[80px] md:blur-[120px] rounded-full z-0" />
+        {/* NY BAKGRUNDSBILD HÄR! */}
+        <div
+          className="absolute inset-0 z-0 opacity-20"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1627947118836-9a2c2c01d4a0?q=80&w=2600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+        {/* Slut på ny bakgrundsbild */}
+
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div
             variants={fadeInUp} initial="hidden" animate="visible"
