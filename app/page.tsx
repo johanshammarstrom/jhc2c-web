@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import {
   Cloud,
   Code,
@@ -14,18 +14,17 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-// Samma fix här: exakta koordinater för att tillfredsställa TypeScript i Amplify
-const fadeInUp = {
+// Förenklad Variants-typ för att garantera att Amplify-bygget lyckas
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: (delay: number) => ({
+  visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      delay: delay,
-      ease: [0.33, 1, 0.68, 1]
+      ease: "easeOut"
     }
-  })
+  }
 };
 
 export default function JHC2CLanding() {
@@ -52,18 +51,33 @@ export default function JHC2CLanding() {
       <header className="relative py-20 md:py-32 px-6 overflow-hidden border-b border-slate-800/50">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }} className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] md:w-[800px] h-[300px] bg-blue-600/10 blur-[80px] md:blur-[120px] rounded-full z-0" />
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <motion.div variants={fadeInUp} initial="hidden" animate="visible" custom={0} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-8">
+          <motion.div
+            variants={fadeInUp} initial="hidden" animate="visible"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-8"
+          >
             <Shield size={14} /> AWS Certified Solutions Architect
           </motion.div>
-          <motion.h1 variants={fadeInUp} initial="hidden" animate="visible" custom={0.2} className="text-5xl sm:text-7xl md:text-9xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
+
+          <motion.h1
+            variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.2 }}
+            className="text-5xl sm:text-7xl md:text-9xl font-black text-white mb-8 tracking-tighter leading-[0.9]"
+          >
             CODE <span className="text-blue-500 italic">TO</span> CLOUD
           </motion.h1>
-          <motion.p variants={fadeInUp} initial="hidden" animate="visible" custom={0.4} className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+
+          <motion.p
+            variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.4 }}
+            className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+          >
             Specialiserad rådgivning inom <span className="text-white font-medium">AWS Cloud Architecture</span>,
             <span className="text-white font-medium"> Infrastructure as Code</span> och
             <span className="text-white font-medium"> Enterprise Hybrid Solutions</span>.
           </motion.p>
-          <motion.div variants={fadeInUp} initial="hidden" animate="visible" custom={0.6} className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          <motion.div
+            variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
             <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="mailto:info@jhc2c.tech" className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-xl shadow-blue-900/20 flex items-center justify-center gap-2 text-sm md:text-base">
               Start Project <ArrowRight size={18} />
             </motion.a>
@@ -108,7 +122,13 @@ export default function JHC2CLanding() {
                   { name: 'VMware vSphere', icon: <Cpu size={18} /> },
                   { name: 'Cloud Migration', icon: <ExternalLink size={18} /> }
                 ].map((item, i) => (
-                  <motion.div key={item.name} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className="flex items-center gap-4 bg-slate-900/40 p-5 rounded-2xl border border-slate-800/50 backdrop-blur-sm group hover:border-blue-500/30 transition-all">
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-center gap-4 bg-slate-900/40 p-5 rounded-2xl border border-slate-800/50 backdrop-blur-sm group hover:border-blue-500/30 transition-all"
+                  >
                     <div className="text-blue-500 group-hover:scale-110 transition-transform">{item.icon}</div>
                     <span className="text-slate-200">{item.name}</span>
                   </motion.div>
@@ -144,7 +164,15 @@ export default function JHC2CLanding() {
 
 function ServiceCard({ icon, title, desc, delay }: { icon: any, title: string, desc: string, delay: number }) {
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: delay }} whileHover={{ y: -8 }} className="p-10 rounded-3xl bg-[#0a1122] border border-slate-800 hover:border-blue-500/50 transition-all duration-300 group relative overflow-hidden h-full shadow-xl">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInUp}
+      transition={{ delay: delay }}
+      whileHover={{ y: -8 }}
+      className="p-10 rounded-3xl bg-[#0a1122] border border-slate-800 hover:border-blue-500/50 transition-all duration-300 group relative overflow-hidden h-full shadow-xl"
+    >
       <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl group-hover:bg-blue-600/10 transition-colors" />
       <div className="mb-8 p-4 bg-slate-900/50 w-fit rounded-2xl group-hover:scale-110 transition-transform duration-300">{icon}</div>
       <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
